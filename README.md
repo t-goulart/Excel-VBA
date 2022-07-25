@@ -5,10 +5,12 @@ Repositório focado para disponibilizar funções personalizadas criadas para ut
 
 Lista de funções:
 - [X] PROCV_TRIPLO
-- [ ] PROCV_DUPLO
+- [X] PROCV_DUPLO
 - [X] SOMASE_LISTA
 - [X] NUMERO_NOTA
-- [ ] PIS
-- [ ] COFINS
+- [X] PIS
+- [X] COFINS
+- [X] CONVERTEEMNUM
+
 
 Para utilizar basta salvar em um *arquivo ".xlam"* (Suplemento do Excel) e habilitar no **Excel desktop** 🖥️
