@@ -5,12 +5,12 @@ Repositório focado para disponibilizar funções personalizadas criadas para ut
 
 Lista de funções:
 
-- [X] PIS
 - [X] COFINS
 - [X] CONVERTEEMNUM
 - [X] ICMS
 - [X] MASCARA
 - [X] NUMERO_NOTA
+- [X] PIS
 - [X] PROCV_DUPLO
 - [X] PROCV_TRIPLO
 - [X] SOMASE_LISTA
