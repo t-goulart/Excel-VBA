@@ -7,13 +7,20 @@ Lista de funções:
 
 - [X] COFINS
 - [X] CONVERTEEMNUM
+- [X] DIFAL
 - [X] ICMS
-- [X] MASCARA
+- [X] INSS
+- [X] IRRF
+- [X] MASCARAS
 - [X] NUMERO_NOTA
 - [X] PIS
-- [X] PROCV_DUPLO
-- [X] PROCV_TRIPLO
-- [X] SOMASE_LISTA
+- [X] PROCVDUPLO
+- [X] PROCVTRIPLO
+- [X] SOMASELISTA
 - [X] TRANSPORDATA
+
+Lista de rotinas:
+
+- [X] RetornaChaveEValor
 
 Para utilizar basta salvar em um *arquivo ".xlam"* (Suplemento do Excel) e habilitar no **Excel desktop** 🖥️
