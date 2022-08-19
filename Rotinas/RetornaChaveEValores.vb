@@ -1,4 +1,4 @@
-Sub Retorna_Chave_Valores()
+Sub RetornaChaveEValores()
 '***** IMPORTANTE!!! Primeiro habilitar em Ferramentas > Referências > Microsoft Scripting Runtime
 
 '---- Essa função vai usar algum dado como base para fazer a soma de valores e retornar para o usuário
