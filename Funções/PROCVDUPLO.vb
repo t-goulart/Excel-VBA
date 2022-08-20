@@ -1,4 +1,8 @@
 Public Function PROCVDUPLO(Valores_Procurados, Primeira_Coluna As Range, Segunda_Coluna As Range, Matriz_Tabela As Range, Coluna_Resultado)
+'Para mais conteúdos igual a este consulte meu GitHub ou canal no YouTube:
+'» GitHub: https://github.com/t-goulart/VBA
+'» YouTube: https://www.youtube.com/channel/UC2iemIZz25SIaucByX5FpSw
+
 '____ Funciona como INDICE + CORRESP limitado a 2 valores procurados
 'Valores_Procurados: Recebe dois valores concatenados formando um valor único
 'Primeira_Coluna: Coluna que contém a primeira palavra das duas contidas dentro de Valores_Procurados

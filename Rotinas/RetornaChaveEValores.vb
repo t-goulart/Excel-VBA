@@ -1,4 +1,8 @@
 Sub RetornaChaveEValores()
+'Para mais conteúdos igual a este consulte meu GitHub ou canal no YouTube:
+'» GitHub: https://github.com/t-goulart/VBA
+'» YouTube: https://www.youtube.com/channel/UC2iemIZz25SIaucByX5FpSw
+
 '***** IMPORTANTE!!! Primeiro habilitar em Ferramentas > Referências > Microsoft Scripting Runtime
 
 '---- Essa função vai usar algum dado como base para fazer a soma de valores e retornar para o usuário

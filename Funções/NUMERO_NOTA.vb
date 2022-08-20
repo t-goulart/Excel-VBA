@@ -1,4 +1,8 @@
 Public Function NUMNOTA(ByVal Celula As String, Optional Tipo As String) As String
+'Para mais conteúdos igual a este consulte meu GitHub ou canal no YouTube:
+'» GitHub: https://github.com/t-goulart/VBA
+'» YouTube: https://www.youtube.com/channel/UC2iemIZz25SIaucByX5FpSw
+
 '____ Extrai um numero de uma cadeia de caracteres usando como base uma palavra chave _
         'Simplificando: Extrair um número de uma nota fiscal de uma célula cheia de informações. Ex.: _
         'Célula = IPI S/ DEV NF 000032554 CF NF 000033235| RESULTADO = 000033235 (RETORNA SEMPRE A 2ª NF)

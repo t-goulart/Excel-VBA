@@ -1,4 +1,8 @@
 Public Function DIFAL(Valor As Double, Estado_Origem As String, Estado_Destino As String)
+'Para mais conteúdos igual a este consulte meu GitHub ou canal no YouTube:
+'» GitHub: https://github.com/t-goulart/VBA
+'» YouTube: https://www.youtube.com/channel/UC2iemIZz25SIaucByX5FpSw
+
 '---- Função para calcular a diferença de ICMS entre estados
 '---- Estados do Sul e Sudeste (Exceto Espirito Santo): 12%
 '---- Demais estados (Incluindo Espirito Santo) 7%

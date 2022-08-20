@@ -1,4 +1,8 @@
 Public Function ICMS(Valor As Double, Estado As Variant) As Variant
+'Para mais conteúdos igual a este consulte meu GitHub ou canal no YouTube:
+'» GitHub: https://github.com/t-goulart/VBA
+'» YouTube: https://www.youtube.com/channel/UC2iemIZz25SIaucByX5FpSw
+
 'Função para calcular o valor do ICMS por Estado
 'Valor: Valor do produto/mercadoria/NF
 'Estado: Sigla do Estado de origem. Ex.: "SP" para São Paulo

@@ -1,4 +1,8 @@
 Public Function PIS(Celula, Optional Nova_Aliquota)
+'Para mais conteúdos igual a este consulte meu GitHub ou canal no YouTube:
+'» GitHub: https://github.com/t-goulart/VBA
+'» YouTube: https://www.youtube.com/channel/UC2iemIZz25SIaucByX5FpSw
+
 'Função que calcula o valor do PIS
 'Valor: Valor do produto/mercadoria/NF
 'Resultado: Calculo do PIS

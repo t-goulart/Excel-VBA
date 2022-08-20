@@ -1,4 +1,8 @@
 Public Function SOMASELISTA(Lista_Dados, Range_Busca_Dados As Range, Range_Busca_Soma As Range)
+'Para mais conteúdos igual a este consulte meu GitHub ou canal no YouTube:
+'» GitHub: https://github.com/t-goulart/VBA
+'» YouTube: https://www.youtube.com/channel/UC2iemIZz25SIaucByX5FpSw
+
 '_____ Essa função faz a soma de vários valores de uma vez usando como base uma lista de valores procurados
 'Lista_Dados: Dados que serão procurados no Range_Busca_Dados para fazer a soma
 'Range_Busca_Dados: Coluna que tem as informações que vamos usar para comparação

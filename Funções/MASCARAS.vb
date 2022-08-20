@@ -1,4 +1,8 @@
 Public Function MASCARAS(ByVal Celula As String, Optional ByVal Tipo_Doc As String)
+'Para mais conteúdos igual a este consulte meu GitHub ou canal no YouTube:
+'» GitHub: https://github.com/t-goulart/VBA
+'» YouTube: https://www.youtube.com/channel/UC2iemIZz25SIaucByX5FpSw
+
 '_____ Função que faz a formatação de alguns documentos com base no valor informado
 'Célula: Valor que será editado com base na mascara informada
 'Tipo_Doc: Descrição do documento que a mascara deve formatar

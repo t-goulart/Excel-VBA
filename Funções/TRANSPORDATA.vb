@@ -1,4 +1,8 @@
 Public Function TRANSPORDATA(Celula, Optional Opcao As String) As Variant
+'Para mais conteúdos igual a este consulte meu GitHub ou canal no YouTube:
+'» GitHub: https://github.com/t-goulart/VBA
+'» YouTube: https://www.youtube.com/channel/UC2iemIZz25SIaucByX5FpSw
+
 'Função que separa data e hora de uma célula
 'Resultado: Retorna a data, hora ou dia da semana
 

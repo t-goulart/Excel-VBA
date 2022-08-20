@@ -1,4 +1,8 @@
 Public Function INSS(Valor As Double, Optional Faixa = "", Optional Soma_Salario = False)
+'Para mais conteúdos igual a este consulte meu GitHub ou canal no YouTube:
+'» GitHub: https://github.com/t-goulart/VBA
+'» YouTube: https://www.youtube.com/channel/UC2iemIZz25SIaucByX5FpSw
+
 'Função para calcular o INSS
 'Faixa 1: 7,5% para salário de até 1.100,00
 'Faixa 2: 9% para salário de até  de 1.100,01 até 2.203,48

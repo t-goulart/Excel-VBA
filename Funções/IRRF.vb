@@ -1,4 +1,7 @@
 Public Function IRRF(Valor As Double, Optional Faixa = "", Optional Soma_Salario = False)
+'Para mais conteúdos igual a este consulte meu GitHub ou canal no YouTube:
+'» GitHub: https://github.com/t-goulart/VBA
+'» YouTube: https://www.youtube.com/channel/UC2iemIZz25SIaucByX5FpSw
 
 '1ª faixa: 7,5% para salário base de R$ 1.903,99 a R$ 2.826,65;
 '2ª faixa: 15% para salário base de R$ 2.826,66 a R$ 3.751,05;
