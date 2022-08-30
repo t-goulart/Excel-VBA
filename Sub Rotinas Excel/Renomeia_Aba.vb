@@ -23,7 +23,9 @@ If Dict.Exists(Novo_Nome) = True Then
     MsgBox "A aba " & Novo_Nome & " já existe!" & Chr(13) & "Apague ou renomeia o arquivo", vbExclamation "ATENÇÃO" 
     ' Encerra a macro | Ñ encerra apenas essa sub rotina, mas toda a macro
     End 
+    
 Else ' Se a aba que queremos criar não existir dentro do dicionário
+
     ' Se a variável é diferente de vazio
     If Novo_Nome <> vbNullString Then
         ' Novo_Nome a aba atual 
