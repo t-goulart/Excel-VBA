@@ -21,6 +21,10 @@ Lista de funções:
 
 Lista de rotinas:
 
-- [X] RetornaChaveEValor
+- [X] Retorna_Valor_Total_Item
+
+Lista de sub rotinas:
+
+- [X] Cria_Nova_Aba
 
 Para utilizar basta salvar em um *arquivo ".xlam"* (Suplemento do Excel) e habilitar no **Excel desktop** 🖥️
