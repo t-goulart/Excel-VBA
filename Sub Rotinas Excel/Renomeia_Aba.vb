@@ -18,12 +18,13 @@ For Aba = 1 To Sheets.Count
 Next Aba 
 
 ' Se o Nome da aba que queremos criar existir dentro do dicionário
-If Dict.Exists(Novo_Nome) = True Then  
+If Dict.Exists(Novo_Nome) = True Then
+
     ' Mensagem informando que a aba já existe
     MsgBox "A aba " & Novo_Nome & " já existe!" & Chr(13) & "Apague ou renomeia o arquivo", vbExclamation "ATENÇÃO" 
     ' Encerra a macro | Ñ encerra apenas essa sub rotina, mas toda a macro
     End 
-    
+
 Else ' Se a aba que queremos criar não existir dentro do dicionário
 
     ' Se a variável é diferente de vazio
@@ -31,6 +32,7 @@ Else ' Se a aba que queremos criar não existir dentro do dicionário
         ' Novo_Nome a aba atual 
         ActiveSheet.Name = Novo_Nome 
     End If
+
 End If
 
 End Sub
