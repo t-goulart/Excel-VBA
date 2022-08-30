@@ -1,5 +1,5 @@
 Public Sub Cria_Nova_Aba(Nome As String, Optional Cor_da_Aba)
-'____ Cria uma nova aba
+'____ Cria uma nova aba (Microsoft Excel)
 'Nome: Nome da nova aba
 'Opcional Cor_da_Aba: Pinta a cor da aba
 
