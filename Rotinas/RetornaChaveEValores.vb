@@ -1,4 +1,4 @@
-Sub RetornaChaveEValores()
+Sub Retorna_Valor_Total()
 'Para mais conteúdos igual a este consulte meu GitHub ou canal no YouTube:
 '» GitHub: https://github.com/t-goulart/VBA
 '» YouTube: https://www.youtube.com/channel/UC2iemIZz25SIaucByX5FpSw
