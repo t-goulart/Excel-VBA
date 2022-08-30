@@ -10,7 +10,6 @@ Sub Retorna_Valor_Total_Item()
 '---- Uma das grandes vantagens será que o usuário não precisa saber, por exemplo, o número das NFs.
 '---- Essa rotina vai identificar sozinha e retornar sem duplicar as NFs e a soma dos seus respectivos valores
 
-
 ' Declaração das variáveis
 Dim Dict As New Dictionary
 Dim Matriz As Variant
@@ -22,7 +21,6 @@ Dim Numero_Coluna_Valores As Integer
 Dim Destino_Numero_Linha As Integer
 Dim Destino_Numero_Coluna As Integer
 Dim Matriz_Celula_Inicial As Variant
-
 
 '---- Coleta dos dados que serão usados para identificar as NFs
 ' » Nome_Aba = Aba que contém a base dos dados | Pode ser necessário consultar dados de uma aba diferente
