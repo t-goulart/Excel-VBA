@@ -1,0 +1,6 @@
+'O método abaixo faz com que o Access ou Excel esperem por um determinando tempo para dar continuidade no processo
+'Cole o método abaixo junto com as variáveis globais no início do código
+Public Declare PtrSafe Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As LongPtr) ' Método de tempo de espera Sleep
+
+'Aplique desta forma no seu código
+Sleep (5000) '_____ Aguarda 5 segundos antes de continuar
