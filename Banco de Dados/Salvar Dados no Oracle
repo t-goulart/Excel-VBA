@@ -1,0 +1,44 @@
+'A rotina abaixo permite salvar dados em uma tabela no oracle
+'Adapte para a sua necessidade incluindo mais colunas
+
+Public Sub RegistraDadosNoOracle(NomeTabela As String, Coluna1 As Variant, Coluna2 As Variant, ColunaData As Variant)
+'- Como usar? _
+  ' Call RegistraDadosNoOracle("NOME_DA_TABELA", "CLIENTE", "PRODUTO", Now)
+
+'Declara as variáveis
+Dim rstBancoOracle As ADODB.Recordset
+Dim Conexao As ADODB.Connection
+Dim StringConexao As String
+Dim SQL As String
+
+
+'_____________________________ ATRIBUI VALOR AS VARIÁVEIS LOCAIS _____________________________
+Set rstBancoOracle = New ADODB.Recordset
+Set Conexao = New ADODB.Connection
+
+
+'_____________________________ ROTINA PRINCIPAL _____________________________
+'Atribui a variável a conexão
+StringConexao = "Provider=OraOLEDB.Oracle; Data Source=LINK_DO_SERVIDOR_DO_ORACLE:NUMERO_DA_PORTA/PPD; User Id=USUARIO; Password=SENHA;"
+
+'Abre a conexão
+Conexao.Open StringConexao
+
+'Insere na tabela informada os dados passados como parâmetro
+SQL = "INSERT INTO " & NomeTabela & " (COLUNA1, COLUNA2) VALUES ('" & Coluna1 & "','" & Coluna2 & "', TO_DATE('" & ColunaData & "', 'DD/MM/YYYY HH24:MI:SS'))"
+
+'Abre a conexão e passa os parâmetros: Comando SQL | Conexão
+rstBancoOracle.Open SQL, Conexao
+
+Sleep (5000) '_____ Aguarda 5 segundos antes de continuar
+
+
+'_____________________________ FECHA CONEXÃO _____________________________
+Conexao.Close
+
+
+'_____________________________ LIMPA VARIÁVEIS LOCAIS _____________________________
+Set rstBancoOracle = Nothing
+Set Conexao = Nothing
+
+End Sub
