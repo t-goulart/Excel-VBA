@@ -1,0 +1,15 @@
+
+Public Function Nz(Valor As Variant, Optional RetornaValor As Variant) As Variant
+'A função recebe um dado e identifica se é tipo Null, se sim, substitui o resultado pelo valor passado no segundo parametro
+'Por padrão retorna vazio
+
+'Se o valor é nulo ou o tipo do dado é nulo (Retorna erro ao tentar atribuir um nulo)
+If IsNull(Valor) = True Or VarType(Valor) = vbError Then
+    If IsEmpty(RetornaValor) = False Then Nz = RetornaValor Else Nz = ""
+    Exit Function
+Else
+    Nz = Valor
+    Exit Function
+End If
+
+End Function
