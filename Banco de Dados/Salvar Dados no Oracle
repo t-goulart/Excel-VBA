@@ -30,7 +30,7 @@ SQL = "INSERT INTO " & NomeDaTabela & " (COLUNA1, COLUNA2, COLUNADATA) VALUES ('
 'Abre a conexão e passa os parâmetros: Comando SQL | Conexão
 rstBancoOracle.Open SQL, Conexao
 
-Sleep (5000) '_____ Aguarda 5 segundos antes de continuar
+Sleep (5000) '_____ Aguarda 5 segundos antes de continuar | confira a pasta de métodos
 
 
 '_____________________________ FECHA CONEXÃO _____________________________
