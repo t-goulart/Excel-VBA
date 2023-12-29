@@ -1,7 +1,7 @@
 'A rotina abaixo permite salvar dados em uma tabela no oracle
 'Adapte para a sua necessidade incluindo mais colunas
 
-Public Sub RegistraDadosNoOracle(NomeTabela As String, Coluna1 As Variant, Coluna2 As Variant, ColunaData As Variant)
+Public Sub RegistraDadosNoOracle(NomeDaTabela As String, Coluna1 As Variant, Coluna2 As Variant, ColunaData As Variant)
 '- Como usar? _
   ' Call RegistraDadosNoOracle("NOME_DA_TABELA", "CLIENTE", "PRODUTO", Now)
 
@@ -25,7 +25,7 @@ StringConexao = "Provider=OraOLEDB.Oracle; Data Source=LINK_DO_SERVIDOR_DO_ORACL
 Conexao.Open StringConexao
 
 'Insere na tabela informada os dados passados como parâmetro
-SQL = "INSERT INTO " & NomeTabela & " (COLUNA1, COLUNA2) VALUES ('" & Coluna1 & "','" & Coluna2 & "', TO_DATE('" & ColunaData & "', 'DD/MM/YYYY HH24:MI:SS'))"
+SQL = "INSERT INTO " & NomeDaTabela & " (COLUNA1, COLUNA2, COLUNADATA) VALUES ('" & Coluna1 & "','" & Coluna2 & "', TO_DATE('" & ColunaData & "', 'DD/MM/YYYY HH24:MI:SS'))"
 
 'Abre a conexão e passa os parâmetros: Comando SQL | Conexão
 rstBancoOracle.Open SQL, Conexao
