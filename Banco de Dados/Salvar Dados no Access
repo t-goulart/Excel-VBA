@@ -1,0 +1,38 @@
+'A rotina abaixo permite salvar dados em uma tabela no Access
+'Adapte para a sua necessidade incluindo mais colunas
+
+Public Function RegistraEnvioEmail(CaminhoDoArquivoAccess As String, NomeDoArquivoAccess As String, NomeDaTabela As String, Coluna1 As Variant, Coluna2 As Variant, ColunaData As Varian)
+
+'Declaração de variáveis
+Dim Conexao As ADODB.Connection
+Dim StringConexao As String
+Dim SQL As String
+
+
+'_____________________________ ATRIBUI VALOR AS VARIÁVEIS LOCAIS _____________________________
+Set Conexao = New ADODB.Connection
+StringConexao = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:"& CaminhoDoArquivoAccess &"\" & NomeDoArquivoAccess &".accdb;"
+
+
+'_____________________________ ROTINA PRINCIPAL _____________________________
+'Abre a conexão com o Access
+Conexao.Open StringConexao
+
+'Define a instrução SQL para inserir dados na tabela desejada (substitua pelos seus valores)
+SQL = "INSERT INTO " & NomeDaTabela & " (COLUNA1, COLUNA2, COLUNADATA) VALUES ('" & Coluna1 & "','" & Coluna2 & "', TO_DATE('" & ColunaData & "', 'DD/MM/YYYY HH24:MI:SS'))"
+
+'Executa o comando SQL no Access
+Conexao.Execute SQL
+
+Sleep (5000) '_____ Aguarda 5 segundos antes de continuar
+
+
+'_____________________________ FECHA A CONEXÃO _____________________________
+Conexao.Close
+
+
+'_____________________________ LIMPA VARIÁVEIS LOCAIS _____________________________
+Set Conexao = Nothing
+
+
+End Function
