@@ -24,7 +24,7 @@ SQL = "INSERT INTO " & NomeDaTabela & " (COLUNA1, COLUNA2, COLUNADATA) VALUES ('
 'Executa o comando SQL no Access
 Conexao.Execute SQL
 
-Sleep (5000) '_____ Aguarda 5 segundos antes de continuar
+Sleep (5000) '_____ Aguarda 5 segundos antes de continuar | confira a pasta de métodos
 
 
 '_____________________________ FECHA A CONEXÃO _____________________________
