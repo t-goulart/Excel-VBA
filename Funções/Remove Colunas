@@ -1,0 +1,49 @@
+Public Function RemoveColunas(ListaDasColunasQueNaoDevemSerExcluidas As Variant)
+'Função que passamos uma ou várias colunas que não devemos excluir, ou seja, excluir todas as demais
+'Sempre passe a lista de colunas dentro de um Array()
+''______________________________ FUNÇÃO: Chama uma função que remove todas as colunas exceto as informadas na variável
+'Call RemoveColunas(Array("ID", "CLIENTE", "DATA", "PRODUTOXYZ"))
+
+'Declara as variáveis locais
+Dim ColunasManter As Variant
+Dim ExcluirColuna As Boolean
+Dim Planilha As Worksheet
+Dim Arquivo As Workbook
+Dim Coluna As Long
+      
+   
+'_____________________________  ATRIBUI VALOR AS VARIÁVEIS _____________________________
+'Captura a aba atual | Define a pasta de traalha e a aba que vai receber as alterações
+Set Arquivo = ActiveWorkbook
+Set Planilha = Arquivo.Sheets(ActiveSheet.Index)
+
+
+'_____________________________  ROTINA PRINCIPAL _____________________________
+'Loop através de todas as colunas da direita para a esquerda
+For Coluna = Planilha.Cells(1, Planilha.Columns.Count).End(xlToLeft).Column To 1 Step -1
+    
+    ExcluirColuna = True ' Assume que a coluna será excluída
+    
+    For Each NomeDasColunas In ListaDasColunasQueNaoDevemSerExcluidas 'Verifica se o cabeçalho da coluna atual está na lista de colunas para manter
+        
+        'Se o nome da coluna atual é igual ao nome das colunas que não devemos excluir entra nessa opção
+        If Planilha.Cells(1, Coluna).Value = NomeDasColunas Then
+            ExcluirColuna = False 'Não exclui a coluna se encontrar o cabeçalho na lista
+            Exit For 'Sai do laço e não exclui a coluna
+        End If
+    
+    Next NomeDasColunas 'Vai para a próxima coluna
+    
+    'Se a variável ExcluirColuna é igual a TRUE entra nessa condição
+    If ExcluirColuna Then
+        Planilha.Columns(Coluna).Delete 'Exclui a coluna
+    End If
+    
+Next Coluna 'Vai para a próxima coluna
+
+
+'_____________________________  LIMPA AS VARIÁVEIS _____________________________
+Set Planilha = Nothing
+Set Arquivo = Nothing
+
+End Function
