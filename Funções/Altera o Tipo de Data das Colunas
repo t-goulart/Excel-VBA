@@ -1,0 +1,38 @@
+Public Function AlteraTipoData(NomesColunas As Variant)
+'Função que altera o tipo de dado de colunas data/hora (01/01/2000 23:59) para apenas data (01/01/2000)
+'Sempre passe a lista de colunas dentro de um Array()
+'______________________________ FUNÇÃO: Chama uma função que altera o tipo de dado da(s) coluna(s) para data abreviada
+'Call AlteraTipoData(Array("DATA_CADASTRO", "DATA_VENDA", "DATA_ENVIO"))
+
+'Declara as variáveis locais
+Dim Planilha As Worksheet
+Dim Arquivo As Workbook
+Dim Indice As Integer
+Dim Coluna As Range
+
+ 
+'_____________________________  ATRIBUI VALOR AS VARIÁVEIS _____________________________
+'Captura a aba atual | Define a pasta de traalha e a aba que vai receber as alterações
+Set Arquivo = ActiveWorkbook
+Set Planilha = Arquivo.Sheets(ActiveSheet.Index)
+
+
+'_____________________________  ROTINA PRINCIPAL _____________________________
+'Loop através dos nomes das colunas fornecidas no array NomesColunas
+For Indice = LBound(NomesColunas) To UBound(NomesColunas)
+
+    'Procure a coluna com o cabeçalho no array NomesColunas(Indice)
+    Set Coluna = Planilha.Rows(1).Find(What:=NomesColunas(Indice), LookIn:=xlValues, LookAt:=xlWhole)
+    
+    'Se a coluna for encontrada, altere o formato para "DD/MM/YYYY"
+    If Not Coluna Is Nothing Then Coluna.EntireColumn.NumberFormat = "DD/MM/YYYY"
+
+Next Indice 'Vai para o próximo indice/index
+
+
+'_____________________________  LIMPA AS VARIÁVEIS _____________________________
+Set Planilha = Nothing
+Set Arquivo = Nothing
+Set Coluna = Nothing
+
+End Function
