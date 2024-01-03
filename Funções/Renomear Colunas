@@ -1,0 +1,38 @@
+Public Function RenomearColuna(NomesAtuais As Variant, NovosNomes As Variant)
+'Função que renomeia uma ou mais colunas de acordo com os parametros | Passe o nome atual das colunas e depois o novo nome das colunas
+'Sempre passe a lista de colunas dentro de um Array()
+'______________________________ FUNÇÃO: Chama uma função que renomeia as colunas
+'Call RenomearColuna(Array("COL1", "COL2", "COL3", "COL4", "COL5"), Array("IDPRODUTO", "NOME", "CIDADE", "BAIRRO", "ESTADO"))
+
+'Declara as variáveis locais
+Dim Planilha As Worksheet
+Dim Arquivo As Workbook
+Dim Indice As Integer
+Dim Coluna As Range
+
+
+'_____________________________  ATRIBUI VALOR AS VARIÁVEIS _____________________________
+'Captura a aba atual | Define a pasta de traalha e a aba que vai receber as alterações
+Set Arquivo = ActiveWorkbook
+Set Planilha = Arquivo.Sheets(ActiveSheet.Index)
+
+
+'_____________________________  ROTINA PRINCIPAL _____________________________
+'Loop através dos nomes atuais e novos para renomear as colunas
+For Indice = LBound(NomesAtuais) To UBound(NomesAtuais)
+    
+    'Procure a coluna com o cabeçalho no array NomesAtuais(i)
+    Set Coluna = Planilha.Rows(1).Find(What:=NomesAtuais(Indice), LookIn:=xlValues, LookAt:=xlWhole)
+    
+    'Se a coluna for encontrada, renomeie para o nome correspondente no array NovosNomes(Indice)
+    If Not Coluna Is Nothing Then Coluna.Value = NovosNomes(Indice)
+    
+Next Indice 'Vai para o próximo indice/index
+
+
+'_____________________________  LIMPA AS VARIÁVEIS _____________________________
+Set Planilha = Nothing
+Set Arquivo = Nothing
+Set Coluna = Nothing
+
+End Function
