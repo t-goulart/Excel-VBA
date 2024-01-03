@@ -1,0 +1,32 @@
+Public Function RetornaPrimeiraDataDaColuna(NomeDaColuna As String) As Date
+'Essa função retorna a primeira data (Primeira posição logo abaixo do cabeçalho) de uma coluna específica 
+'______________________________ FUNÇÃO: Chama uma função que salva uma cópia em XLSX na pasta informada no caminho
+'PrimeiraData = RetornaPrimeiraDataDaColuna("DATA_CADASTRO")
+
+'Declara as variáveis locais
+Dim Planilha As Worksheet
+Dim PrimeiraData As Range
+Dim colunaNome As String
+Dim Arquivo As Workbook
+Dim celulaNome As Range
+
+
+'_____________________________  ATRIBUI VALOR AS VARIÁVEIS _____________________________
+'Captura a aba atual | Define a pasta de traalha e a aba que vai receber as alterações
+Set Arquivo = ActiveWorkbook
+Set Planilha = Arquivo.Sheets(ActiveSheet.Index)
+
+'Procura pela primeira célula com uma data na coluna
+Set celulaNome = Planilha.Rows(1).Find(What:=NomeDaColuna, LookIn:=xlValues, LookAt:=xlWhole)
+
+'Passa para a variável com o endereço da primeira célula
+Set primeiraCelula = Planilha.Cells(celulaNome.Row + 1, celulaNome.Column)
+
+'Seleciona a celula
+primeiraCelula.Select
+
+'Retorna a data foi encontrada
+RetornaPrimeiraDataDaColuna = primeiraCelula.Value
+
+
+End Function
