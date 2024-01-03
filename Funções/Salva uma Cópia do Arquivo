@@ -1,0 +1,27 @@
+Public Function SalvaUmaCopia(NomeDoArquivo As String, SalvarCopiaNesseCaminho As String)
+'Salva uma cópia do arquivo atual em xlsx
+'______________________________ FUNÇÃO: Chama uma função que salva uma cópia em XLSX na pasta informada no caminho
+'Call SalvaUmaCopia("Nome_Do_Arquivo", "Pasta_Onde_O_Arquivo_Será_Salvo")
+
+'Declara as variáveis locais
+Dim NovoArquivo As String
+
+'_____________________________ DESATIVA AS ROTINAS _____________________________
+Application.EnableEvents = False
+Application.DisplayAlerts = False
+Application.ScreenUpdating = False
+Application.Calculation = xlCalculationManual
+
+
+'Concatena as duas variáveis criando o novo nome do arquivo
+NovoArquivo = SalvarCopiaNesseCaminho & NomeDoArquivo
+ThisWorkbook.SaveAs NovoArquivo, FileFormat:=xlOpenXMLWorkbook
+
+
+'_____________________________ REATIVA AS ROTINAS _____________________________
+Application.EnableEvents = True
+Application.DisplayAlerts = True
+Application.ScreenUpdating = True
+Application.Calculation = xlCalculationAutomatic
+
+End Function
