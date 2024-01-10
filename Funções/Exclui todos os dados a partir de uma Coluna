@@ -1,0 +1,24 @@
+Public Function ExcluirTudoApartirDaColuna(NumeroDaColunaQueIniciamosAExclusao As Integer)
+'Exclui todos os dados a partir da coluna informada (Incluindo o número da coluna informada)
+
+'Declara as variáveis locais
+Dim Planilha As Worksheet
+Dim UltimaColuna As Long
+Dim Arquivo As Workbook
+
+
+'_____________________________  ATRIBUI VALOR AS VARIÁVEIS _____________________________
+'Captura a aba atual | Define a pasta de traalha e a aba que vai receber as alterações
+Set Arquivo = ActiveWorkbook
+Set Planilha = Arquivo.Sheets(ActiveSheet.Index)
+
+
+'Encontra a última coluna preenchida na planilha
+UltimaColuna = Planilha.Cells(1, Planilha.Columns.Count).End(xlToRight).Column
+
+'Exclui as colunas da coluna informada até a última coluna
+If UltimaColuna >= NumeroDaColunaQueIniciamosAExclusao Then 'NumeroDaColunaQueIniciamosAExclusao é o numero da coluna que os dados começam a ser excluidos
+    Planilha.Range(Planilha.Cells(1, NumeroDaColunaQueIniciamosAExclusao), Planilha.Cells(1, UltimaColuna)).EntireColumn.Delete
+End If
+
+End Function
