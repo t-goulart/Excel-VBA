@@ -1,0 +1,44 @@
+Public Sub RemoveEspacoVazio(NomesDasColunas As Variant)
+'Função que remove os espaços vazios antes e depois de um dado
+'Pode ser aplicado em multiplas colunas
+'______________________________ FUNÇÃO: Chama uma função que remove espaços vazios antes e depois do dado da coluna
+'Call RemoveEspacoVazio(Array("PRODUTO", "DESCRICAO", "FUNCIONARIO"))
+
+'Declara as variáveis locais
+Dim NomeDaColuna As Variant
+Dim Planilha As Worksheet
+Dim Arquivo As Workbook
+Dim UltimaLinha As Long
+Dim Coluna As Range
+Dim Celula As Range
+
+
+'_____________________________  ATRIBUI VALOR AS VARIÁVEIS _____________________________
+'Captura a aba atual | Define a pasta de traalha e a aba que vai receber as alterações
+Set Arquivo = ActiveWorkbook
+Set Planilha = Arquivo.Sheets(ActiveSheet.Index)
+
+
+'_____________________________  ROTINA PRINCIPAL _____________________________
+'Loop através dos nomes das colunas fornecidos no array
+For Each NomeDaColuna In NomesDasColunas
+    
+    'Encontra a coluna pelo nome
+    Set Coluna = Planilha.Rows(1).Find(What:=NomeDaColuna, LookIn:=xlValues, LookAt:=xlWhole)
+    
+    'Verifica se a coluna foi encontrada
+    If Not Coluna Is Nothing Then
+    
+        ' Encontra a última linha com dados na coluna
+        UltimaLinha = Planilha.Cells(Planilha.Rows.Count, Coluna.Column).End(xlUp).Row
+        
+        ' Loop através das células na coluna para remover espaços em branco
+        For Each Celula In Planilha.Range(Planilha.Cells(2, Coluna.Column), Planilha.Cells(UltimaLinha, Coluna.Column))
+            Celula.Value = Trim(Celula.Value) 'Remove espaços em branco no início e no final
+        Next Celula 'Vai para o próxima coluna
+
+    End If
+    
+Next NomeDaColuna 'Vai para o próxima coluna
+    
+End Sub
