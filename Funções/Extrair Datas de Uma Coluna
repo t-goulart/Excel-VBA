@@ -1,0 +1,82 @@
+Public Function ExtraiDatasDeUmaColuna(ListaDasColunasComDatas As Variant)
+'Função que passamos para separar a data de uma coluna com data e hora | Exclui a hora e mantém apenas a data
+'Sempre passe a lista de colunas dentro de um Array()
+'______________________________ FUNÇÃO: Chama uma função que extrai as datas de uma coluna com data e hora | Remove as horas
+'Call ExtraiDatasDeUmaColunas(Array("DATA_ENTRADA", "DATA_SAIDA"))
+
+'Declara as variáveis locais
+Dim ColunasManter As Variant
+Dim ExcluirColuna As Boolean
+Dim Planilha As Worksheet
+Dim Arquivo As Workbook
+Dim Coluna As Long
+      
+      
+'_____________________________ DESATIVA AS ROTINAS _____________________________
+Application.EnableEvents = False
+Application.DisplayAlerts = False
+Application.ScreenUpdating = False
+Application.Calculation = xlCalculationManual
+
+
+'_____________________________  ATRIBUI VALOR AS VARIÁVEIS _____________________________
+'Captura a aba atual | Define a pasta de traalha e a aba que vai receber as alterações
+Set Arquivo = ActiveWorkbook
+Set Planilha = Arquivo.Sheets(ActiveSheet.Index)
+
+
+'_____________________________  ROTINA PRINCIPAL _____________________________
+'Loop através de todas as colunas da direita para a esquerda
+For Coluna = Planilha.Cells(1, Planilha.Columns.Count).End(xlToLeft).Column To 1 Step -1
+    
+    ColunaLocalizada = False ' Assume que a coluna será excluída
+    
+    For Each NomeDasColunas In ListaDasColunasComDatas 'Verifica se o cabeçalho da coluna atual está na lista de colunas para manter
+                
+        'Se o nome da coluna atual é igual ao nome das colunas que devemos ajustar
+        If Planilha.Cells(1, Coluna).Value = NomeDasColunas Then
+            ColunaLocalizada = True 'Se a coluna for localizada recebe verdadeiro
+            Exit For 'Sai do laço para ajustar a coluna
+        End If
+    
+    Next NomeDasColunas 'Vai para a próxima coluna
+    
+    'Se a variável ColunaLocalizada é igual a TRUE entra nessa condição
+    If ColunaLocalizada Then
+        
+        'A partir da coluna atual cria uma nova coluna à direita | Coluna que receberá as horas
+        Planilha.Columns(Coluna).Offset(0, 1).Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
+        
+        Planilha.Columns(Coluna).Select
+            Selection.TextToColumns Destination:=Planilha.Cells(1, Coluna), _
+            DataType:=xlDelimited, _
+            TextQualifier:=xlDoubleQuote, _
+            ConsecutiveDelimiter:=True, _
+            Tab:=True, Semicolon:=False, _
+            Comma:=False, _
+            Space:=True, _
+            Other:=False, _
+            FieldInfo _
+            :=Array(Array(1, 4), Array(2, 1)), _
+            TrailingMinusNumbers:=True
+        
+        'Exclui a nova coluna criada para receber as horas
+        Planilha.Columns(Coluna).Offset(0, 1).Delete Shift:=xlToLeft
+        
+    End If
+    
+Next Coluna 'Vai para a próxima coluna
+
+
+'_____________________________  LIMPA AS VARIÁVEIS _____________________________
+Set Planilha = Nothing
+Set Arquivo = Nothing
+
+
+'_____________________________ REATIVA AS ROTINAS _____________________________
+Application.EnableEvents = True
+Application.DisplayAlerts = True
+Application.ScreenUpdating = True
+Application.Calculation = xlCalculationAutomatic
+
+End Function
